@@ -31,6 +31,34 @@ $ docker pull <image_name>
 
 $ docker pull ubuntu:14.0.4
 
+## Remove specific image from local store
+
+$ docker rmi <imageid>
+
+## Start container
+
+$ docker start <container>
+
+## Stop container
+
+$ docker stop <container>
+
+## Remove container
+
+$ docker rm <container>
+
+## Run with more command
+
+**-d** This will run the container in the background mode
+
+**--name** Give a name to the container when it run
+
+**-p** Map some network port to the container
+
+[a link](https://firebasestorage.googleapis.com/v0/b/pictures-dc7c3.appspot.com/o/dockerimg1.png?alt=media&token=dc6e550a-2c87-4ad0-ab3e-eee0826d7bc3)
+
+$ docker run -d --name web -p 80:8080
+
 ## Download example container 
 
 This will try to run the container called
