@@ -1,5 +1,18 @@
 #Docker usefull command
 
+## Get help
+
+$ docker help
+
+$ docker <command> help
+
+## Login to docker repo
+
+To pull some images you need
+to be logged on the docker repo
+
+$ docker login
+
 ## Get version
 
 $ docker version
@@ -14,6 +27,10 @@ $ docker info
 ## Get list of all installed images
 
 $ docker images
+
+## Get the label of a specific image 
+
+$ docker image inspect <IMAGE_ID>
 
 ## See all the running containers
 
@@ -55,9 +72,34 @@ $ docker rm <container>
 
 **-p** Map some network port to the container
 
-[a link](https://firebasestorage.googleapis.com/v0/b/pictures-dc7c3.appspot.com/o/dockerimg1.png?alt=media&token=dc6e550a-2c87-4ad0-ab3e-eee0826d7bc3)
+[Mapping port](https://firebasestorage.googleapis.com/v0/b/pictures-dc7c3.appspot.com/o/dockerimg1.png?alt=media&token=dc6e550a-2c87-4ad0-ab3e-eee0826d7bc3)
 
-$ docker run -d --name web -p 80:8080
+$ docker container run -d --name nginx-test -p 8080:80 nginx
+
+This command will run the container nginx in background with the
+name nginx-test and map the port 8080 **your machine** to the port
+80 of the container.
+
+After you can access the container with your browser doing only
+
+**http://localhost:8080**
+
+## Interactive mode inside a container
+
+This will start a container and you enter it 
+so you are inside the container
+
+$ docker it <image>
+
+## Exit when interactive mode container
+
+**Be carefull** if the container have only one
+process running the exit command will stop the container
+
+$ exit 
+
+**CTRL P+Q** will exit the container without killing it
+
 
 ## Download example container 
 
