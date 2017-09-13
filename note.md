@@ -26,7 +26,7 @@ $ docker info
 
 ## Get list of all installed images
 
-$ docker images
+$ docker images ls
 
 ## Get the label of a specific image 
 
@@ -52,6 +52,10 @@ $ docker pull ubuntu:14.0.4
 
 $ docker rmi <imageid>
 
+## See all containers running
+
+$ docker container ls
+
 ## Start container
 
 $ docker start <container>
@@ -63,6 +67,25 @@ $ docker stop <container>
 ## Remove container
 
 $ docker rm <container>
+
+## Attach the open terminal to running container
+
+Doing so if you use some console log or print 
+they will be show in the terminal when you attach
+you open terminal session to a running container
+
+$ docker container attach <runningContainerName>
+
+## See the log of the container
+
+If a container use console.log or some stdout 
+this command can consult the log file
+
+$ docker container logs --tail 5 <runningContainerName>
+
+This command will see the log in real time
+
+$ docker container logs -f <runningContainerName>
 
 ## Run with more command
 
