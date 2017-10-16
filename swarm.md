@@ -7,6 +7,10 @@ The best pratice is to have a minimum and maximum of 3 managers
 Only one leader will be available at the time to do change to the
 swarm.
 
+## Note for production
+
+Always run 5 swarm manager in production inside the cluster
+
 ## Start the swarm
 
 **--advertise-addr** Set the ip to the swarm
@@ -59,3 +63,7 @@ $ docker service scale <servicename>=7
 **OR**
 
 $ docker service update --replicas 10 <servicename>
+
+## Set your docker shell to a machine 
+
+$ docker-machine env swarm-manager

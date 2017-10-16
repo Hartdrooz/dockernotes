@@ -135,3 +135,7 @@ This container will just print fast an hello-world
 
 $ docker run hello-world
 
+# Remove all stopped containers
+
+$ docker container prune
+
